@@ -65,10 +65,10 @@ export default function LuxuryCTA() {
         >
           <div className="relative w-[300px] sm:w-[380px] lg:w-[460px] aspect-square rounded-3xl bg-gradient-to-br from-[#0b1528] to-[#06101f] border border-white/10 shadow-2xl p-8 flex items-center justify-center overflow-hidden">
             <Image
-              src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png"
+              src="/image.png"
               alt="Premium Idea Illustration"
               fill
-              className="object-contain opacity-90 drop-shadow-[0_20px_50px_rgba(56,182,255,0.35)]"
+              className="object-cover opacity-90 drop-shadow-[0_20px_50px_rgba(56,182,255,0.35)]"
             />
 
             {/* Floating Particles */}

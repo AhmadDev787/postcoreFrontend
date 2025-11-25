@@ -7,6 +7,13 @@ import { Menu, X, LogIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 const nav = [
   { name: "Pricing", href: "/pricing" },
@@ -17,7 +24,6 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 bg-[rgba(1,11,25,0.6)] backdrop-blur-sm border-b border-[rgba(255,255,255,0.03)]">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
@@ -42,14 +48,23 @@ export function Header() {
               {item.name}
             </Link>
           ))}
-          <Link href="/login" className="ml-2">
-            <Button className="rounded-xl bg-lux-blue text-lux-dark hover:text-lux-blue hover:bg-lux-dark cursor-pointer px-5 py-2 shadow-lg">
-              <div className="flex items-center gap-2">
-                <LogIn size={16} />
-                <span>Login</span>
+          {/* <Link href="/login" className="ml-2">*/}
+          {/* <Button className="rounded-xl bg-lux-blue text-lux-dark hover:text-lux-blue hover:bg-lux-dark cursor-pointer px-5 py-2 shadow-lg"> */}
+          <div className="flex items-center cursor-pointer gap-2">
+            <SignedOut>
+              <div className="rounded-xl bg-lux-blue text-lux-dark hover:text-lux-blue hover:bg-lux-dark cursor-pointer px-5 py-2 shadow-lg">
+                <SignInButton />
               </div>
-            </Button>
-          </Link>
+              <div className="rounded-xl bg-lux-blue text-lux-dark hover:text-lux-blue hover:bg-lux-dark cursor-pointer px-5 py-2 shadow-lg">
+                <SignUpButton></SignUpButton>
+              </div>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </div>
+          {/* </Button> */}
+          {/*</Link> */}
         </nav>
 
         {/* Mobile */}

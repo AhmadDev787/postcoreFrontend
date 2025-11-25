@@ -14,7 +14,7 @@ export default function Home() {
         <Header />
         <Hero />
         {/* i will convert ultra features into Use Cases Section */}
-        <UltraFeatures />
+        {/* <UltraFeatures /> */}
         <AdvancedBenefits />
         <PricingPreview />
         <LuxuryCTA />
